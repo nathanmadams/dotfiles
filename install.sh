@@ -8,7 +8,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="profile bashrc vimrc vim"    # list of files/folders to symlink in homedir
+files="profile bashrc vimrc"      # list of files/folders to symlink in homedir
 
 ##########
 
@@ -29,7 +29,3 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
-
-echo "Updating submodules"
-git submodule init
-git submodule update
