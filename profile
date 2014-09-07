@@ -6,3 +6,6 @@ if [[ -d "/arbos-tmp" && -n $SSH_AUTH_SOCK ]]; then
         SSH_AUTH_SOCK=$(echo $SSH_AUTH_SOCK | sed 's/tmp/arbos-tmp/')
     fi
 fi
+
+# Adjust PATH for MacPorts
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
