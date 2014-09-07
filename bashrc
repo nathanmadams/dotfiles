@@ -5,3 +5,10 @@ alias ls='ls -G'
 alias ll='ls -la'
 
 alias tl='tail -500 /var/log/syslog'
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    export CLICOLOR=1
+    export LSCOLORS=GxFxCxDxBxegedabagaced
+
+    source .bash/arbordev
+fi

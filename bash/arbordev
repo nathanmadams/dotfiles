@@ -1,0 +1,33 @@
+dev_login ()
+{
+    local host=$1
+    shift
+    local cmd="HOME=/data/nadams SHELL=/bin/bash chroot /base $*"
+    ssh -t root@$host $cmd
+}
+
+dl ()
+{
+    dev_login $1 bash -l
+}
+
+push_env ()
+{
+	if [ -z $1 ]; then
+        echo "A destination box name must be provided"
+        exit 1
+	fi
+
+	DEST_BOX=$1
+
+	HOME_DIR="/base/data/nadams"
+	scp -r ~/.ssh/id_rsa.pub root@${DEST_BOX}:/base/store/ssh/ssh_public_root
+	ssh root@${DEST_BOX} -n "mkdir $HOME_DIR"
+	echo "Copying files to ${DEST_BOX}:$HOME_DIR"
+	scp -r ~/.bashrc ~/.bash ~/.profile ~/.vimrc root@${DEST_BOX}:$HOME_DIR
+	ssh root@${DEST_BOX} -n "mkdir $HOME_DIR/.ssh/"
+	scp ~/.ssh/id_rsa.pub ~/.ssh/known_hosts root@${DEST_BOX}:$HOME_DIR/.ssh/
+	ssh root@${DEST_BOX} -n "chmod -R 600 $HOME_DIR/.ssh"
+	#ssh root@${DEST_BOX} -n "mkdir $HOME_DIR/bin/"
+	#scp ~/bin/maketags root@${DEST_BOX}:$HOME_DIR/bin/
+}
