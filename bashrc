@@ -11,4 +11,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export LSCOLORS=GxFxCxDxBxegedabagaced
 
     source .bash/arbordev
+else
+    alias ls='ls --color'
 fi
