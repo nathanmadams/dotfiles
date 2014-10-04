@@ -84,13 +84,13 @@ while poll:
         if line == 'Information Key':
             insec = not insec
         elif insec:
-            if not options.poll:
-                print line
             if bus.complete:
                 buses.append(bus)
                 bus = Bus()
                 if not options.poll:
                     print
+            if not options.poll:
+                print line
             bus.add_line(line)
     buses.append(bus)
 
