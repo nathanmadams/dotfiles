@@ -5,6 +5,8 @@ alias ls='ls -G'
 alias ll='ls -la'
 
 alias tl='tail -500 /var/log/syslog'
+alias bus='~/scripts/bus.py'
+
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export CLICOLOR=1
