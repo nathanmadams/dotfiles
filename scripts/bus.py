@@ -21,6 +21,10 @@ class Bus(object):
             if tokens[1] == "To":
                 self.going_home = True
                 idx += 1
+            else:
+                self.going_home = False
+                if tokens[1] == "From":
+                    idx += 1
             if tokens[idx] != "On":
                 self.offset = int(tokens[idx])
                 self.late = (tokens[idx+2] == "behind")
