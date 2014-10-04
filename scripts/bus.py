@@ -93,6 +93,8 @@ while poll:
                 print line
             bus.add_line(line)
     buses.append(bus)
+    if not options.poll:
+        print
 
     num_buses = 0
     for bus in buses:
