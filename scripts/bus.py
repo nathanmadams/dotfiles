@@ -89,9 +89,9 @@ while poll:
             if bus.complete:
                 buses.append(bus)
                 bus = Bus()
+                if options.poll:
+                    print
             bus.add_line(line)
-    if not options.poll:
-        print
     buses.append(bus)
 
     num_buses = 0
