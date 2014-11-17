@@ -7,6 +7,7 @@ alias ll='ls -la'
 alias tl='tail -500 /var/log/syslog'
 alias bus='~/.scripts/bus.py'
 
+alias glog='git log --color --graph --pretty=format:'\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset'\'' --abbrev-commit'
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export CLICOLOR=1
