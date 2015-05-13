@@ -11,6 +11,11 @@ dl ()
     dev_login $1 bash -l
 }
 
+tree ()
+{
+    find . -maxdepth $1 -not -path '*/\.*' | python -c "import sys as s;s.a=[];[setattr(s,'a',list(filter(lambda p: c.startswith(p+'/'),s.a)))or (s.stdout.write('  '*len(s.a)+c[len(s.a[-1])+1 if s.a else 0:])or True) and s.a.append(c[:-1]) for c in s.stdin]"
+}
+
 push_env ()
 {
 	if [ -z $1 ]; then
