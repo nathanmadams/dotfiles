@@ -1,0 +1,9 @@
+[user]
+	name = Nathan Adams
+	email = nadams@arbor.net
+[filter "media"]
+	required = true
+	clean = git media clean %f
+	smudge = git media smudge %f
+[rerere]
+	enabled = true
