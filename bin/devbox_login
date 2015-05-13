@@ -1,0 +1,5 @@
+#!/bin/bash
+
+host=$1
+cmd="HOME=/data/nadams SHELL=/bin/bash chroot /base bash -l"
+ssh -t root@$host $cmd
