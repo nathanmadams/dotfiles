@@ -14,7 +14,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export CLICOLOR=1
     export LSCOLORS=GxFxCxDxBxegedabagaced
 
-    source .bash/arbordev
     export PATH="$PATH:$HOME/dotfiles/bin"
 else
     alias ls='ls --color'
