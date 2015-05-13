@@ -1,0 +1,4 @@
+#!/bin/bash    
+echo Dev repo X!!!
+
+git remote add snarl root@snarl:/base/data/nadams/projects/packages/psa/psa-backend/src/$1

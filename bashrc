@@ -14,8 +14,14 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export LSCOLORS=GxFxCxDxBxegedabagaced
 
     source .bash/arbordev
+    export PATH="$PATH:$HOME/dotfiles/bin"
 else
     alias ls='ls --color'
     LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90'
     export LS_COLORS
 fi
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+export NVM_DIR="/Users/nadams/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
