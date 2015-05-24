@@ -8,7 +8,7 @@ DEST_BOX=$1
 HOME_DIR="/base/data/nadams"
 scp -r ~/.ssh/id_rsa.pub root@${DEST_BOX}:/base/store/ssh/ssh_public_root
 ssh root@${DEST_BOX} -n "mkdir $HOME_DIR"
-ssh root@${DEST_BOX} -n "HOME=$HOME_DIR && cd ~ && git clone git@git.arbor.net:/nadams/dotfiles && source dotfiles/install.sh"
+ssh root@${DEST_BOX} -n "HOME=$HOME_DIR && cd ~ && git clone --recursive git@git.arbor.net:/nadams/dotfiles && source dotfiles/install.sh"
 #echo "Copying files to ${DEST_BOX}:$HOME_DIR"
 #scp -r ~/.bashrc ~/.bash ~/.profile ~/.vimrc root@${DEST_BOX}:$HOME_DIR
 ssh root@${DEST_BOX} -n "mkdir $HOME_DIR/.ssh/"
