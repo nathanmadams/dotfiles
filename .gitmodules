@@ -1,3 +1,0 @@
-[submodule "vim_runtime"]
-	path = vim_runtime
-	url = git+ssh://git@git.arbor.net/nadams/vimrc
