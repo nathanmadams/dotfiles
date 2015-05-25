@@ -6,6 +6,8 @@ alias ll='ls -la'
 
 alias tl='tail -500 /var/log/syslog'
 
+alias psa-syslog='cat /var/log/syslog | grep -vE "kernel|redis|CRON|dhclient|sshd|rsyslogd|auditcomsh" | less'
+
 alias dl='devbox_login'
 alias push_env='devbox_setup'
 
