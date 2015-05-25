@@ -13,11 +13,11 @@ alias push_env='devbox_setup'
 
 alias glog='git log --color --graph --pretty=format:'\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset'\'' --abbrev-commit'
 
+export PATH="$PATH:$HOME/dotfiles/bin"
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export CLICOLOR=1
     export LSCOLORS=GxFxCxDxBxegedabagaced
-
-    export PATH="$PATH:$HOME/dotfiles/bin"
 else
     alias ls='ls --color'
     LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90'
