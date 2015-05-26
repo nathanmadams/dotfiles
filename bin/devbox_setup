@@ -6,9 +6,20 @@ fi
 
 DEST_BOX=$1
 HOME_DIR="/base/data/nadams"
-scp -r ~/.ssh/id_rsa.pub root@${DEST_BOX}:/base/store/ssh/ssh_public_root
-ssh root@${DEST_BOX} -n "mkdir $HOME_DIR"
-ssh root@${DEST_BOX} -n "HOME=$HOME_DIR && cd ~ && git clone git@git.arbor.net:/nadams/dotfiles && source dotfiles/install.sh"
-ssh root@${DEST_BOX} -n "mkdir $HOME_DIR/.ssh/"
-scp ~/.ssh/id_rsa.pub ~/.ssh/known_hosts root@${DEST_BOX}:$HOME_DIR/.ssh/
+
+echo -n "Copying ssh key to arbux ssh_public_root..."
+scp -rq ~/.ssh/id_rsa.pub root@${DEST_BOX}:/base/store/ssh/ssh_public_root
+echo "done."
+
+echo -n "Creating home directory and copying .ssh files..."
+ssh root@${DEST_BOX} -n "mkdir -p $HOME_DIR"
+ssh root@${DEST_BOX} -n "mkdir -p $HOME_DIR/.ssh/"
+scp -q ~/.ssh/id_rsa.pub ~/.ssh/known_hosts ~/.ssh/config root@${DEST_BOX}:$HOME_DIR/.ssh/
 ssh root@${DEST_BOX} -n "chmod -R 600 $HOME_DIR/.ssh"
+echo "done."
+
+echo "Cloning and installing dotfiles from git repo..."
+ssh root@${DEST_BOX} -n "HOME=$HOME_DIR && cd ~ && git clone git@git.arbor.net:/nadams/dotfiles && source dotfiles/install.sh"
+
+echo "Setting up vim..."
+ssh root@${DEST_BOX} -n "HOME=/data/nadams SHELL=/bin/bash chroot /base bash -cl 'setup_vim'"
