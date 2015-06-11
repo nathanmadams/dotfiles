@@ -1,0 +1,9 @@
+#!/bin/bash
+
+jar_loc="/data/files/fake-edge-1.2.jar"
+jks_loc="/data/files/collector.jks"
+loc_ip=$(hostname -I)
+
+cmd="java -cp ${jar_loc} com.packetloop.realtime.edge.FakeEdge ${loc_ip} ${jks_loc} ${jks_loc} 0.05"
+
+eval $cmd
