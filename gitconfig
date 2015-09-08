@@ -7,3 +7,5 @@
 	smudge = git media smudge %f
 [rerere]
 	enabled = true
+[core]
+	editor = /usr/bin/vim
