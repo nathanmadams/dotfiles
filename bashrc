@@ -15,6 +15,10 @@ alias glog='git log --color --graph --pretty=format:'\''%Cred%h%Creset -%C(yello
 
 export PATH="$PATH:$HOME/dotfiles/bin"
 
+if [[ -f ~/dotfiles/git-completion.bash ]]; then
+    source ~/dotfiles/git-completion.bash
+fi
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export CLICOLOR=1
     export LSCOLORS=GxFxCxDxBxegedabagaced
