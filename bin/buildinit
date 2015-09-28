@@ -1,0 +1,13 @@
+#!/bin/bash
+
+tree=$1
+if [! -d "${tree}" ]; then
+    echo "Not a directory: ${tree}"
+    exit 1
+fi
+buildpath="${tree}/build/build.inc"
+if [! -f "${buildpath}" ]; then
+    echo "No build.inc file found at: ${buildpath}"
+    exit 1
+fi
+source ${buildpath}
