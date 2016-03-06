@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cmd="python -c 'import time; print time.ctime(${1});'"
+
+eval $cmd
