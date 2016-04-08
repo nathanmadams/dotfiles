@@ -14,7 +14,7 @@ alias push_env='devbox_setup'
 alias glog='git log --color --graph --pretty=format:'\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset'\'' --abbrev-commit'
 
 export PATH="$PATH:$HOME/dotfiles/bin"
-export LESS="-M"
+export LESS="-Mr"
 alias pg='pg_ctl -D ~/var/postgres -l ~/postgres.log'
 
 if [[ -f ~/dotfiles/git-completion.bash ]]; then
