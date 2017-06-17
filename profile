@@ -7,8 +7,7 @@ if [[ -d "/arbos-tmp" && -n $SSH_AUTH_SOCK ]]; then
     fi
 fi
 
-# Adjust PATH for MacPorts
-export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 

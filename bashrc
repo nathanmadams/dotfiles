@@ -1,6 +1,5 @@
 export PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] "
 
-export ARBSVN="svn+ssh://svnuser@svn.arbor.net"
 alias ls='ls -G'
 alias ll='ls -la'
 
@@ -14,6 +13,9 @@ alias push_env='devbox_setup'
 alias glog='git log --color --graph --pretty=format:'\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset'\'' --abbrev-commit'
 
 export PATH="$PATH:$HOME/dotfiles/bin"
+export PATH="$PATH:$HOME/Library/Python/2.7/bin/"
+export PATH=/Users/nadams/miniconda2/bin:$PATH
+
 export LESS="-Mr"
 alias pg='pg_ctl -D ~/var/postgres -l ~/postgres.log'
 
