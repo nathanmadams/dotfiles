@@ -1,6 +1,6 @@
 [user]
 	name = Nathan Adams
-	email = nadams@arbor.net
+	email = nathanmadams@gmail.com
 [filter "media"]
 	required = true
 	clean = git media clean %f

@@ -1,6 +1,6 @@
 #!/bin/bash
 cd ~
-git clone git@git.arbor.net:/nadams/vimrc .vim_runtime
+git clone git@github.com:nathanmadams/vimrc.git .vim_runtime
 cd .vim_runtime
 sh install_awesome_vimrc.sh
 git submodule init

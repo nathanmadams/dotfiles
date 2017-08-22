@@ -3,21 +3,11 @@ export PS1="\[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\] "
 alias ls='ls -G'
 alias ll='ls -la'
 
-alias tl='tail -500 /var/log/syslog'
-
-alias psa-syslog='cat /var/log/syslog | grep -vE "kernel|redis|CRON|dhclient|sshd|rsyslogd|auditcomsh" | less'
-
-alias dl='devbox_login'
-alias push_env='devbox_setup'
-
 alias glog='git log --color --graph --pretty=format:'\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset'\'' --abbrev-commit'
 
 export PATH="$PATH:$HOME/dotfiles/bin"
-export PATH="$PATH:$HOME/Library/Python/2.7/bin/"
-export PATH=/Users/nadams/miniconda2/bin:$PATH
 
 export LESS="-Mr"
-alias pg='pg_ctl -D ~/var/postgres -l ~/postgres.log'
 
 if [[ -f ~/dotfiles/git-completion.bash ]]; then
     source ~/dotfiles/git-completion.bash
@@ -32,7 +22,3 @@ else
     export LS_COLORS
 fi
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-export NVM_DIR="/Users/nadams/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
