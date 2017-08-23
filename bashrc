@@ -9,9 +9,7 @@ export PATH="$PATH:$HOME/dotfiles/bin"
 
 export LESS="-Mr"
 
-if [[ -f ~/dotfiles/git-completion.bash ]]; then
-    source ~/dotfiles/git-completion.bash
-fi
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export CLICOLOR=1
