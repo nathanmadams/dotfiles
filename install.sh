@@ -37,3 +37,5 @@ git config --global user.name ${fullname}
 git config --global user.email ${email}
 git config --global rerere.enabled true
 git config --global core.editor "/usr/bin/vim"
+
+echo "Install complete. Git configuration complete."
