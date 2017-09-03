@@ -8,10 +8,9 @@
 
 dir=~/dotfiles                      # dotfiles directory
 olddir=~/dotfiles_old               # old dotfiles backup directory
-files="gitconfig profile bashrc"    # list of files/folders to symlink in homedir
+files="profile bashrc"    # list of files/folders to symlink in homedir
 
 ##########
-
 # change to the dotfiles directory
 cd $dir
 
@@ -25,3 +24,16 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/.$file
 done
+
+############################
+# Configure git
+############################
+echo "Enter first and last name for git:"
+read fullname
+echo "Enter email address for git:"
+read email
+
+git config --global user.name ${fullname}
+git config --global user.email ${email}
+git config --global rerere.enabled true
+git config --global core.editor "/usr/bin/vim"
