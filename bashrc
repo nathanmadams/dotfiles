@@ -5,7 +5,7 @@ alias ll='ls -la'
 
 alias glog='git log --color --graph --pretty=format:'\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset'\'' --abbrev-commit'
 
-export PATH="$PATH:$HOME/dotfiles/bin"
+export PATH="$HOME/.rbenv/shims:$PATH:$HOME/dotfiles/bin"
 
 export LESS="-Mr"
 
